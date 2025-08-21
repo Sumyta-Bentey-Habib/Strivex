@@ -1,14 +1,15 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link"; 
 
 const NavBar = () => {
     const navMenu =()=>{
         return(
             <>
-             <li><a>Home</a></li> 
-            <li><a>Event Page</a></li>
-            <li><a>About</a></li>
-            </>
+        <li><Link href="/">Home</Link></li>
+        <li><Link href="/events">Events</Link></li> 
+        <li><Link href="/about">About</Link></li>
+      </>
         )
     }
   return (
