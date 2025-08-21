@@ -1,11 +1,19 @@
-import dbconnect from "@/lib/dbconnect";
+import { ObjectId } from "mongodb";
+import { getCollection } from "@/lib/dbconnect";
 
 export default async function EventDetails({ params }) {
-  const { id } = params; 
-  const eventsCollection = await dbconnect("events");
+  const { id } = params;
+
+  if (!ObjectId.isValid(id)) {
+    return <p className="p-6 text-center">Invalid Event ID.</p>;
+  }
+
+  const eventsCollection = await getCollection("events");
   const event = await eventsCollection.findOne({ _id: new ObjectId(id) });
 
-  if (!event) return <p className="p-6">Event not found.</p>;
+  if (!event) {
+    return <p className="p-6 text-center">Event not found.</p>;
+  }
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
@@ -28,6 +36,3 @@ export default async function EventDetails({ params }) {
     </div>
   );
 }
-
-
-import { ObjectId } from "mongodb";
