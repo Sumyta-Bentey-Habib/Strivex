@@ -13,7 +13,7 @@
     "bcrypt": "^6.0.0",
     "daisyui": "^5.0.50",
     "lucide-react": "^0.540.0",
-    "mongodb": "^6.18.0",
+    "mongodb": "^5.9.2",
     "next": "15.4.6",
     "next-auth": "^4.24.11",
     "react": "19.1.0",
