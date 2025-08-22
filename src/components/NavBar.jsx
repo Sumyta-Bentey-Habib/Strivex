@@ -10,7 +10,7 @@ const NavBar = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true); // ensures client-side rendering
+    setMounted(true); 
   }, []);
 
   // Render a simple navbar until client mounts
@@ -34,7 +34,7 @@ const NavBar = () => {
       {/* Logo */}
       <div className="navbar-start">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/image/logo.png" width={40} height={40} alt="Strivex Logo" />
+          <Image src="./image/logo.png" width={40} height={40} alt="Strivex Logo" />
           <span className="text-2xl font-bold text-primary">Strivex</span>
         </Link>
       </div>
@@ -44,7 +44,6 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1 gap-6">
           <li><Link href="/">Home</Link></li>
           <li><Link href="/events">Events</Link></li>
-          <li><Link href="/about">About</Link></li>
           {isLoggedIn && <li><Link href="/dashboard">Dashboard</Link></li>}
         </ul>
       </div>

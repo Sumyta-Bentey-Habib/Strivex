@@ -18,7 +18,6 @@ const Banner = () => {
            Train like a beast,play like a champion.It’s not whether you get knocked down,
 it’s whether you get up.
           </p>
-          <button className="btn btn-primary">Get Started</button>
         </div>
       </div>
     </div>
